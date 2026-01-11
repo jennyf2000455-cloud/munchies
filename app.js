@@ -3,7 +3,7 @@ const CONFIG = {
   subtitle: "Elotes & Corn Creations · Fresh Fruit & Sweet + Spicy",
   theme: "vivid",
   assets: {
-    logo: "assets/new-logomunch.png"
+    logo: "assets/logo-munch.jpeg"
   },
   historia: [
     "MUNCHIES is a vibrant food concept focused on sweet and spicy snacks, blending traditional elote flavors with fresh fruit and bold toppings.",
