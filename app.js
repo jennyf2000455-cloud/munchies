@@ -1,6 +1,7 @@
 const CONFIG = {
   name: "MUNCHIES",
   subtitle: "Elotes & Corn Creations · Fresh Fruit & Sweet + Spicy",
+  theme: "vivid",
   assets: {
     logo: "assets/logo-munch.jpeg"
   },
@@ -93,6 +94,7 @@ const splitBilingual = (value) => {
 };
 
 const renderHero = () => {
+  document.body.dataset.theme = CONFIG.theme;
   document.getElementById("businessName").textContent = CONFIG.name;
   document.getElementById("businessSubtitle").textContent = CONFIG.subtitle;
 
@@ -158,6 +160,7 @@ const renderMenu = () => {
     card.className = "menu-card";
 
     const heading = document.createElement("h3");
+    heading.className = "menu-pill";
     heading.textContent = section.categoria;
     card.appendChild(heading);
 
