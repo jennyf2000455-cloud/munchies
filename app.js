@@ -1,6 +1,10 @@
 const CONFIG = {
   name: "MUNCHIES",
   subtitle: "Elotes & Corn Creations · Fresh Fruit & Sweet + Spicy",
+  theme: "vivid",
+  assets: {
+    logo: "assets/new-logomunch.png"
+  },
   historia: [
     "MUNCHIES is a vibrant food concept focused on sweet and spicy snacks, blending traditional elote flavors with fresh fruit and bold toppings.",
     "With a colorful and fun style, MUNCHIES offers everything from corn creations and chip snacks to fruit cups and frozen treats, delivering unique flavor combinations for every craving."
@@ -90,13 +94,23 @@ const splitBilingual = (value) => {
 };
 
 const renderHero = () => {
+  document.body.dataset.theme = CONFIG.theme;
   document.getElementById("businessName").textContent = CONFIG.name;
   document.getElementById("businessSubtitle").textContent = CONFIG.subtitle;
 
-  const logo = document.getElementById("logo");
   const logoWrap = document.getElementById("logoWrap");
+  const logo = logoWrap ? logoWrap.querySelector("img") : null;
+  if (!logo) {
+    return;
+  }
+  if (CONFIG.assets && CONFIG.assets.logo) {
+    logo.src = CONFIG.assets.logo;
+  } else {
+    logo.classList.add("hidden");
+    return;
+  }
   logo.addEventListener("error", () => {
-    logoWrap.classList.add("hidden");
+    logo.classList.add("hidden");
   });
 };
 
@@ -149,6 +163,7 @@ const renderMenu = () => {
     card.className = "menu-card";
 
     const heading = document.createElement("h3");
+    heading.className = "menu-pill";
     heading.textContent = section.categoria;
     card.appendChild(heading);
 
