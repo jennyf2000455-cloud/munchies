@@ -3,6 +3,7 @@ const CONFIG = {
   subtitle: "Elotes & Corn Creations · Fresh Fruit & Sweet + Spicy",
   theme: "vivid",
   assets: {
+    logo: "assets/new-logomunch.png"
     logo: "assets/logo-munch.jpeg"
   },
   historia: [
@@ -98,7 +99,6 @@ const renderHero = () => {
   document.getElementById("businessName").textContent = CONFIG.name;
   document.getElementById("businessSubtitle").textContent = CONFIG.subtitle;
 
-  const logo = document.getElementById("logo");
   const logoWrap = document.getElementById("logoWrap");
   if (CONFIG.assets && CONFIG.assets.logo) {
     logo.src = CONFIG.assets.logo;
