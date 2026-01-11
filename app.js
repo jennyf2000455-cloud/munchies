@@ -4,6 +4,7 @@ const CONFIG = {
   theme: "vivid",
   assets: {
     logo: "assets/new-logomunch.png"
+    logo: "assets/logo-munch.jpeg"
   },
   historia: [
     "MUNCHIES is a vibrant food concept focused on sweet and spicy snacks, blending traditional elote flavors with fresh fruit and bold toppings.",
@@ -99,10 +100,6 @@ const renderHero = () => {
   document.getElementById("businessSubtitle").textContent = CONFIG.subtitle;
 
   const logoWrap = document.getElementById("logoWrap");
-  const logo = logoWrap ? logoWrap.querySelector("img") : null;
-  if (!logo) {
-    return;
-  }
   if (CONFIG.assets && CONFIG.assets.logo) {
     logo.src = CONFIG.assets.logo;
   } else {
