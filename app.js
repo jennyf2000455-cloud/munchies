@@ -1,6 +1,9 @@
 const CONFIG = {
   name: "MUNCHIES",
   subtitle: "Elotes & Corn Creations · Fresh Fruit & Sweet + Spicy",
+  assets: {
+    logo: "assets/logo-munch.jpeg"
+  },
   historia: [
     "MUNCHIES is a vibrant food concept focused on sweet and spicy snacks, blending traditional elote flavors with fresh fruit and bold toppings.",
     "With a colorful and fun style, MUNCHIES offers everything from corn creations and chip snacks to fruit cups and frozen treats, delivering unique flavor combinations for every craving."
@@ -95,6 +98,12 @@ const renderHero = () => {
 
   const logo = document.getElementById("logo");
   const logoWrap = document.getElementById("logoWrap");
+  if (CONFIG.assets && CONFIG.assets.logo) {
+    logo.src = CONFIG.assets.logo;
+  } else {
+    logoWrap.classList.add("hidden");
+    return;
+  }
   logo.addEventListener("error", () => {
     logoWrap.classList.add("hidden");
   });
