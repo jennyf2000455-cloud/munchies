@@ -101,11 +101,11 @@ const renderHero = () => {
   if (CONFIG.assets && CONFIG.assets.logo) {
     logo.src = CONFIG.assets.logo;
   } else {
-    logoWrap.classList.add("hidden");
+    logo.classList.add("hidden");
     return;
   }
   logo.addEventListener("error", () => {
-    logoWrap.classList.add("hidden");
+    logo.classList.add("hidden");
   });
 };
 
