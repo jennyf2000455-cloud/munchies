@@ -1,261 +1,186 @@
 const CONFIG = {
-  name: "MUNCHIES",
-  subtitle: "Elotes & Corn Creations · Fresh Fruit & Sweet + Spicy",
-  theme: "vivid",
-  assets: {
-    logo: "assets/new-logomunch.png"
-    logo: "assets/logo-munch.jpeg"
-  },
-  historia: [
-    "MUNCHIES is a vibrant food concept focused on sweet and spicy snacks, blending traditional elote flavors with fresh fruit and bold toppings.",
-    "With a colorful and fun style, MUNCHIES offers everything from corn creations and chip snacks to fruit cups and frozen treats, delivering unique flavor combinations for every craving."
-  ],
-  datos: {
-    direccion: "",
-    ciudadEstado: "",
-    telefono: "",
-    whatsapp: ""
+  business: {
+    name: "MUNCHIES",
+    subtitle: "Elotes Creations · Fresh Fruit & Sweet + Spicy",
+    historia: [
+      "MUNCHIES is a vibrant snack concept focused on sweet and spicy flavors, combining traditional elote creations with fresh fruit and bold toppings.",
+      "With a playful, colorful style, MUNCHIES offers corn snacks, fruit cups, frozen treats, and specialty mixes designed to satisfy every craving.",
+    ],
+    datos: [
+      { label: "Address", value: "4021 Diego Ln" },
+      { label: "City/State", value: "Brownsville, Tx" },
+      { label: "Phone", value: "9564662491" },
+    ],
   },
   menu: [
     {
-      categoria: "Elotes & Corn Creations",
+      title: "Elotes & Corn Creations",
       items: [
-        { nombre: "Elote en elote / Elote on the Cob", precio: "$5" },
-        { nombre: "Elote en vaso / Elote in a Cup", precio: "$6" },
-        { nombre: "Hot Cheetos + Elote / Hot Cheetos + Corn", precio: "$7" },
-        { nombre: "Takis + Elote / Takis + Corn", precio: "$7" },
-        { nombre: "Doritos + Elote / Doritos + Corn", precio: "$7" },
+        { es: "Elote entero", en: "Elote on the Cob", price: "$5" },
+        { es: "Elote en vaso", en: "Elote in a Cup", price: "$6" },
+        { es: "Hot Cheetos + Elote", en: "Hot Cheetos + Corn", price: "$7" },
+        { es: "Takis + Elote", en: "Takis + Corn", price: "$7" },
+        { es: "Doritos + Elote", en: "Doritos + Corn", price: "$7" },
         {
-          nombre: "Elote cargado / Loaded Elote",
-          precio: "$9",
-          nota: "Corn + chips + cheese + chili"
-        }
-      ]
+          es: "Elote cargado",
+          en: "Loaded Elote",
+          price: "$9",
+          note: "Corn + chips + cheese + chili",
+        },
+      ],
     },
     {
-      categoria: "Add-Ons",
-      nota: "$1 each",
+      title: "Add-Ons ($1 each)",
       items: [
-        { nombre: "Queso / Cheese", precio: "$1" },
-        { nombre: "Chile / Chili", precio: "$1" },
-        { nombre: "Limón / Lime", precio: "$1" },
-        { nombre: "Chamoy / Chamoy", precio: "$1" },
-        { nombre: "Tajín / Tajin", precio: "$1" },
-        { nombre: "Chamoy + Tajín / Chamoy + Tajin", precio: "$1" }
-      ]
+        { es: "Queso", en: "Cheese", price: "$1" },
+        { es: "Chile", en: "Chili", price: "$1" },
+        { es: "Limón", en: "Lime", price: "$1" },
+        { es: "Chamoy", en: "Chamoy", price: "$1" },
+        { es: "Tajín", en: "Tajin", price: "$1" },
+        { es: "Chamoy + Tajín", en: "Chamoy + Tajin", price: "$1" },
+      ],
     },
     {
-      categoria: "Fresh Fruit & Sweet + Spicy",
+      title: "Fresh Fruit & Sweet + Spicy",
       items: [
-        { nombre: "Vaso chico de fruta / Small Fruit Cup", precio: "$5" },
-        { nombre: "Vaso grande de fruta / Large Fruit Cup", precio: "$7" },
-        { nombre: "Fruta con dulces / Fruit + Candy Mix", precio: "$8" },
-        { nombre: "Paleta de sandía / Watermelon Stick", precio: "$4" },
-        { nombre: "Mango con chamoy y tajín / Mango w/ Chamoy & Tajin", precio: "$6" }
-      ]
+        { es: "Vaso chico de fruta", en: "Small Fruit Cup", price: "$5" },
+        { es: "Vaso grande de fruta", en: "Large Fruit Cup", price: "$7" },
+        { es: "Fruta con dulces", en: "Fruit + Candy Mix", price: "$8" },
+        { es: "Paleta de sandía", en: "Watermelon Stick", price: "$4" },
+        { es: "Mango con chamoy y tajín", en: "Mango w/ Chamoy & Tajin", price: "$6" },
+      ],
     },
     {
-      categoria: "Ice Cream & Frozen Treats",
+      title: "Ice Cream & Frozen Treats",
       items: [
-        { nombre: "Cono suave / Soft Serve Cone", precio: "$4" },
-        { nombre: "Cono cubierto / Dipped Cone", precio: "$5" },
-        { nombre: "Vaso de nieve (2 bolas) / Ice Cream Cup (2 scoops)", precio: "$5" },
-        { nombre: "Nachos de nieve / Ice Cream Nachos", precio: "$7" },
-        { nombre: "Paletas de fruta / Fruit Pops", precio: "$4" }
-      ]
+        { es: "Cono suave", en: "Soft Serve Cone", price: "$4" },
+        { es: "Cono cubierto", en: "Dipped Cone", price: "$5" },
+        { es: "Vaso de nieve (2 bolas)", en: "Ice Cream Cup (2 scoops)", price: "$5" },
+        { es: "Nachos de nieve", en: "Ice Cream Nachos", price: "$7" },
+        { es: "Paletas de fruta", en: "Fruit Pops", price: "$4" },
+      ],
     },
     {
-      categoria: "Drinks & Slushies",
+      title: "Drinks & Slushies",
       items: [
-        { nombre: "Agua fresca / Agua Fresca", precio: "$4" },
-        { nombre: "Mangonada / Mangonada", precio: "$7" },
-        { nombre: "Chamoyada / Chamoyada", precio: "$6" },
-        { nombre: "Limonada de sabor / Flavored Lemonade", precio: "$5" },
-        { nombre: "Granizado / Slushie", precio: "$5" }
-      ]
+        { es: "Agua fresca", en: "Agua Fresca", price: "$4" },
+        { es: "Mangonada", en: "Mangonada", price: "$7" },
+        { es: "Chamoyada", en: "Chamoyada", price: "$6" },
+        { es: "Limonada de sabor", en: "Flavored Lemonade", price: "$5" },
+        { es: "Granizado", en: "Slushie", price: "$5" },
+      ],
     },
     {
-      categoria: "Munchies Specialty Cups",
+      title: "Munchies Specialty Cups",
       items: [
         {
-          nombre: "Vaso MUNCHIES / The MUNCHIES Cup",
-          precio: "$10",
-          nota: "Corn + chips + cheese + fruit + candy + chili (sweet & spicy combo)"
-        }
-      ]
+          es: "Vaso MUNCHIES",
+          en: "The MUNCHIES Cup",
+          price: "$10",
+          note: "Corn + chips + cheese + fruit + candy + chili (sweet & spicy combo)",
+        },
+      ],
+    },
+  ],
+  acciones: [],
+};
+
+const businessName = document.querySelector("#businessName");
+const businessSubtitle = document.querySelector("#businessSubtitle");
+const historiaContent = document.querySelector("#historiaContent");
+const datosContent = document.querySelector("#datosContent");
+const menuContent = document.querySelector("#menuContent");
+const accionesSection = document.querySelector("#acciones");
+const accionesContent = document.querySelector("#accionesContent");
+
+businessName.textContent = CONFIG.business.name;
+businessSubtitle.textContent = CONFIG.business.subtitle;
+
+CONFIG.business.historia.forEach((paragraph) => {
+  const p = document.createElement("p");
+  p.textContent = paragraph;
+  historiaContent.appendChild(p);
+});
+
+CONFIG.business.datos.forEach((item) => {
+  const card = document.createElement("div");
+  card.className = "info-card";
+
+  const label = document.createElement("span");
+  label.className = "info-label";
+  label.textContent = item.label;
+
+  const value = document.createElement("strong");
+  value.textContent = item.value;
+
+  card.append(label, value);
+  datosContent.appendChild(card);
+});
+
+CONFIG.menu.forEach((category) => {
+  const categoryWrap = document.createElement("article");
+  categoryWrap.className = "menu-category";
+
+  const pill = document.createElement("div");
+  pill.className = "category-pill";
+  pill.textContent = category.title;
+
+  const itemsWrap = document.createElement("div");
+  itemsWrap.className = "menu-items";
+
+  category.items.forEach((item) => {
+    const itemWrap = document.createElement("div");
+    itemWrap.className = "menu-item";
+
+    const row = document.createElement("div");
+    row.className = "menu-row";
+
+    const nameWrap = document.createElement("div");
+    const nameEs = document.createElement("span");
+    nameEs.textContent = item.es;
+
+    const nameEn = document.createElement("span");
+    nameEn.className = "menu-en";
+    nameEn.textContent = item.en;
+
+    nameWrap.append(nameEs, nameEn);
+
+    const price = document.createElement("span");
+    price.textContent = item.price;
+
+    row.append(nameWrap, price);
+
+    itemWrap.appendChild(row);
+
+    if (item.note) {
+      const note = document.createElement("div");
+      note.className = "menu-note";
+      note.textContent = item.note;
+      itemWrap.appendChild(note);
     }
-  ]
-};
 
-const splitBilingual = (value) => {
-  const parts = value.split("/").map((part) => part.trim());
-  const primary = parts[0] || value;
-  const secondary = parts.slice(1).join("/ ").trim();
-  return { primary, secondary };
-};
-
-const renderHero = () => {
-  document.body.dataset.theme = CONFIG.theme;
-  document.getElementById("businessName").textContent = CONFIG.name;
-  document.getElementById("businessSubtitle").textContent = CONFIG.subtitle;
-
-  const logoWrap = document.getElementById("logoWrap");
-  if (CONFIG.assets && CONFIG.assets.logo) {
-    logo.src = CONFIG.assets.logo;
-  } else {
-    logo.classList.add("hidden");
-    return;
-  }
-  logo.addEventListener("error", () => {
-    logo.classList.add("hidden");
+    itemsWrap.appendChild(itemWrap);
   });
-};
 
-const renderHistoria = () => {
-  const historia = document.getElementById("historiaContent");
-  historia.innerHTML = "";
-  CONFIG.historia.forEach((paragraph) => {
-    const p = document.createElement("p");
-    p.textContent = paragraph;
-    historia.appendChild(p);
-  });
-};
+  categoryWrap.append(pill, itemsWrap);
+  menuContent.appendChild(categoryWrap);
+});
 
-const renderDatos = () => {
-  const datosContent = document.getElementById("datosContent");
-  const entries = [
-    { label: "Dirección", value: CONFIG.datos.direccion },
-    { label: "Ciudad/Estado", value: CONFIG.datos.ciudadEstado },
-    { label: "Teléfono", value: CONFIG.datos.telefono }
-  ];
-
-  const validEntries = entries.filter((entry) => entry.value);
-
-  if (validEntries.length === 0) {
-    datosContent.innerHTML = "<p class=\"menu-note\">Información disponible próximamente.</p>";
-    return;
-  }
-
-  validEntries.forEach((entry) => {
+if (!CONFIG.acciones.length) {
+  accionesSection.classList.add("hidden");
+} else {
+  CONFIG.acciones.forEach((accion) => {
     const card = document.createElement("div");
-    card.className = "info-card";
+    card.className = "action-card";
 
     const title = document.createElement("h3");
-    title.textContent = entry.label;
+    title.textContent = accion.label;
 
-    const value = document.createElement("p");
-    value.textContent = entry.value;
+    const link = document.createElement("a");
+    link.href = accion.href;
+    link.textContent = accion.cta;
 
-    card.append(title, value);
-    datosContent.appendChild(card);
-  });
-};
-
-const renderMenu = () => {
-  const menuContent = document.getElementById("menuContent");
-  menuContent.innerHTML = "";
-
-  CONFIG.menu.forEach((section) => {
-    const card = document.createElement("article");
-    card.className = "menu-card";
-
-    const heading = document.createElement("h3");
-    heading.className = "menu-pill";
-    heading.textContent = section.categoria;
-    card.appendChild(heading);
-
-    if (section.nota) {
-      const note = document.createElement("p");
-      note.className = "menu-note";
-      note.textContent = section.nota;
-      card.appendChild(note);
-    }
-
-    const list = document.createElement("div");
-    list.className = "menu-list";
-
-    section.items.forEach((item) => {
-      const row = document.createElement("div");
-      row.className = "menu-item";
-
-      const name = document.createElement("div");
-      name.className = "item-name";
-
-      const { primary, secondary } = splitBilingual(item.nombre);
-      if (secondary) {
-        const primarySpan = document.createElement("span");
-        primarySpan.textContent = primary;
-
-        const secondarySpan = document.createElement("span");
-        secondarySpan.textContent = secondary;
-        secondarySpan.className = "secondary";
-
-        name.textContent = "";
-        name.append(primarySpan, secondarySpan);
-      } else {
-        name.textContent = primary;
-      }
-
-      const price = document.createElement("div");
-      price.className = "item-price";
-      price.textContent = item.precio;
-
-      const left = document.createElement("div");
-      left.appendChild(name);
-
-      if (item.nota) {
-        const note = document.createElement("div");
-        note.className = "item-note";
-        note.textContent = item.nota;
-        left.appendChild(note);
-      }
-
-      row.append(left, price);
-      list.appendChild(row);
-    });
-
-    card.appendChild(list);
-    menuContent.appendChild(card);
-  });
-};
-
-const renderAcciones = () => {
-  const accionesSection = document.getElementById("acciones");
-  const accionesContent = document.getElementById("accionesContent");
-  accionesContent.innerHTML = "";
-
-  const actions = [];
-
-  if (CONFIG.datos.telefono) {
-    actions.push({
-      title: "Llamar",
-      description: CONFIG.datos.telefono,
-      href: `tel:${CONFIG.datos.telefono}`
-    });
-  }
-
-  if (actions.length === 0) {
-    accionesSection.classList.add("hidden");
-    return;
-  }
-
-  accionesSection.classList.remove("hidden");
-
-  actions.forEach((action) => {
-    const card = document.createElement("a");
-    card.className = "action-card";
-    card.href = action.href;
-    card.innerHTML = `<strong>${action.title}</strong><span>${action.description}</span>`;
+    card.append(title, link);
     accionesContent.appendChild(card);
   });
-};
-
-const init = () => {
-  renderHero();
-  renderHistoria();
-  renderDatos();
-  renderMenu();
-  renderAcciones();
-};
-
-init();
+}
