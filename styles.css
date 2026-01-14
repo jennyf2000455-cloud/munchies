@@ -66,9 +66,8 @@ img {
   max-width: 220px;
   width: 100%;
   height: auto;
-  object-fit: contain;
   display: block;
-  margin: 0 auto;
+  background: transparent;
 }
 
 .eyebrow {
