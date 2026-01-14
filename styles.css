@@ -57,15 +57,17 @@ img {
 }
 
 .logo-wrap {
-  background: var(--white);
-  padding: 16px;
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  width: min(220px, 70%);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.logo-wrap img {
-  max-width: 200px;
+.logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
   margin: 0 auto;
 }
 
